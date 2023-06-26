@@ -63,7 +63,7 @@ class Compressed extends Formatter
     /**
      * Output block selectors
      *
-     * @param \ScssPhp\ScssPhp\Formatter\OutputBlock $block
+     * @param OutputBlock $block
      */
     protected function blockSelectors(OutputBlock $block)
     {

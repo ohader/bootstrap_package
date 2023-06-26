@@ -564,7 +564,7 @@ class Number extends Node implements \ArrayAccess
     /**
      * Output number
      *
-     * @param \ScssPhp\ScssPhp\Compiler $compiler
+     * @param Compiler $compiler
      *
      * @return string
      */

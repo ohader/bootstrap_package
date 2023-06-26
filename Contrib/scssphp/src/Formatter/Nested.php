@@ -221,7 +221,7 @@ class Nested extends Formatter
     /**
      * Block has flat child
      *
-     * @param \ScssPhp\ScssPhp\Formatter\OutputBlock $block
+     * @param OutputBlock $block
      *
      * @return bool
      */

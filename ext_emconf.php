@@ -13,7 +13,7 @@ $EM_CONF[$_EXTKEY] = [
     'category' => 'templates',
     'constraints' => [
         'depends' => [
-            'typo3' => '11.5.0-12.4.99',
+            'typo3' => '11.5.0-13.5.99',
             'rte_ckeditor' => '11.5.0-12.4.99',
             'seo' => '11.5.0-12.4.99'
         ],
@@ -31,9 +31,7 @@ $EM_CONF[$_EXTKEY] = [
         ],
     ],
     'state' => 'stable',
-    'uploadfolder' => 0,
-    'createDirs' => '',
-    'clearCacheOnLoad' => 1,
+    'clearCacheOnLoad' => true,
     'author' => 'Benjamin Kott',
     'author_email' => 'info@bk2k.info',
     'author_company' => 'private',

@@ -65,7 +65,7 @@ class SourceMapGenerator
     /**
      * The base64 VLQ encoder
      *
-     * @var \ScssPhp\ScssPhp\SourceMap\Base64VLQ
+     * @var Base64VLQ
      */
     protected $encoder;
 
@@ -142,7 +142,7 @@ class SourceMapGenerator
      *
      * @return string|null
      *
-     * @throws \ScssPhp\ScssPhp\Exception\CompilerException If the file could not be saved
+     * @throws CompilerException If the file could not be saved
      * @deprecated
      */
     public function saveMap($content)

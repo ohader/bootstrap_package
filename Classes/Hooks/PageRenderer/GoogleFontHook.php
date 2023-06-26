@@ -29,7 +29,7 @@ class GoogleFontHook
     ];
 
     /**
-     * @var \BK2K\BootstrapPackage\Service\GoogleFontService
+     * @var GoogleFontService
      */
     protected $googleFontService;
 

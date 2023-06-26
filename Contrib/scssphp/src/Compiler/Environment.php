@@ -12,6 +12,7 @@
 
 namespace ScssPhp\ScssPhp\Compiler;
 
+use ScssPhp\ScssPhp\Block;
 /**
  * Compiler environment
  *
@@ -22,7 +23,7 @@ namespace ScssPhp\ScssPhp\Compiler;
 class Environment
 {
     /**
-     * @var \ScssPhp\ScssPhp\Block|null
+     * @var Block|null
      */
     public $block;
 

@@ -20,7 +20,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 class PreProcessHook
 {
     /**
-     * @var \BK2K\BootstrapPackage\Service\CompileService
+     * @var CompileService
      */
     protected $compileService;
 

@@ -3027,7 +3027,7 @@ class Parser
             if (\strlen($this->buffer) === $this->count || ! ctype_digit($this->buffer[$this->count])) {
                 $this->whitespace();
 
-                $unit = new Node\Number($m[1], empty($m[3]) ? '' : $m[3]);
+                $unit = new Number($m[1], empty($m[3]) ? '' : $m[3]);
 
                 return true;
             }

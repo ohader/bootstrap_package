@@ -65,7 +65,7 @@ abstract class Formatter
     public $keepSemicolons;
 
     /**
-     * @var \ScssPhp\ScssPhp\Formatter\OutputBlock
+     * @var OutputBlock
      */
     protected $currentBlock;
 
@@ -80,7 +80,7 @@ abstract class Formatter
     protected $currentColumn;
 
     /**
-     * @var \ScssPhp\ScssPhp\SourceMap\SourceMapGenerator|null
+     * @var SourceMapGenerator|null
      */
     protected $sourceMapGenerator;
 
@@ -140,7 +140,7 @@ abstract class Formatter
     /**
      * Output lines inside a block
      *
-     * @param \ScssPhp\ScssPhp\Formatter\OutputBlock $block
+     * @param OutputBlock $block
      *
      * @return void
      */
@@ -159,7 +159,7 @@ abstract class Formatter
     /**
      * Output block selectors
      *
-     * @param \ScssPhp\ScssPhp\Formatter\OutputBlock $block
+     * @param OutputBlock $block
      *
      * @return void
      */
@@ -177,7 +177,7 @@ abstract class Formatter
     /**
      * Output block children
      *
-     * @param \ScssPhp\ScssPhp\Formatter\OutputBlock $block
+     * @param OutputBlock $block
      *
      * @return void
      */
@@ -191,7 +191,7 @@ abstract class Formatter
     /**
      * Output non-empty block
      *
-     * @param \ScssPhp\ScssPhp\Formatter\OutputBlock $block
+     * @param OutputBlock $block
      *
      * @return void
      */
@@ -237,7 +237,7 @@ abstract class Formatter
     /**
      * Test and clean safely empty children
      *
-     * @param \ScssPhp\ScssPhp\Formatter\OutputBlock $block
+     * @param OutputBlock $block
      *
      * @return bool
      */
@@ -267,8 +267,8 @@ abstract class Formatter
      *
      * @api
      *
-     * @param \ScssPhp\ScssPhp\Formatter\OutputBlock             $block              An abstract syntax tree
-     * @param \ScssPhp\ScssPhp\SourceMap\SourceMapGenerator|null $sourceMapGenerator Optional source map generator
+     * @param OutputBlock $block An abstract syntax tree
+     * @param SourceMapGenerator|null $sourceMapGenerator Optional source map generator
      *
      * @return string
      */

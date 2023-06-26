@@ -1,10 +1,11 @@
 <?php
 
+use ScssPhp\ScssPhp\Version;
 if (version_compare(PHP_VERSION, '5.6') < 0) {
     throw new \Exception('scssphp requires PHP 5.6 or above');
 }
 
-if (! class_exists('ScssPhp\ScssPhp\Version')) {
+if (! class_exists(Version::class)) {
     spl_autoload_register(function ($class) {
         if (0 !== strpos($class, 'ScssPhp\ScssPhp\\')) {
             // Not a ScssPhp class

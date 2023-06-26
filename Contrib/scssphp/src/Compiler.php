@@ -231,7 +231,7 @@ class Compiler
     protected $rootBlock;
 
     /**
-     * @var \ScssPhp\ScssPhp\Compiler\Environment
+     * @var Environment
      */
     protected $env;
     /**
@@ -634,7 +634,7 @@ class Compiler
      *
      * @param string|null $path
      *
-     * @return \ScssPhp\ScssPhp\Parser
+     * @return Parser
      */
     protected function parserFactory($path)
     {
@@ -705,7 +705,7 @@ class Compiler
      * @param string|null   $type
      * @param string[]|null $selectors
      *
-     * @return \ScssPhp\ScssPhp\Formatter\OutputBlock
+     * @return OutputBlock
      */
     protected function makeOutputBlock($type, $selectors = null)
     {
@@ -733,7 +733,7 @@ class Compiler
     /**
      * Compile root
      *
-     * @param \ScssPhp\ScssPhp\Block $rootBlock
+     * @param Block $rootBlock
      *
      * @return void
      */
@@ -777,7 +777,7 @@ class Compiler
     /**
      * Flatten selectors
      *
-     * @param \ScssPhp\ScssPhp\Formatter\OutputBlock $block
+     * @param OutputBlock $block
      * @param string                                 $parentKey
      *
      * @return void
@@ -1285,7 +1285,7 @@ class Compiler
     /**
      * Compile media
      *
-     * @param \ScssPhp\ScssPhp\Block $media
+     * @param Block $media
      *
      * @return void
      */
@@ -1350,9 +1350,9 @@ class Compiler
     /**
      * Media parent
      *
-     * @param \ScssPhp\ScssPhp\Formatter\OutputBlock $scope
+     * @param OutputBlock $scope
      *
-     * @return \ScssPhp\ScssPhp\Formatter\OutputBlock
+     * @return OutputBlock
      */
     protected function mediaParent(OutputBlock $scope)
     {
@@ -1371,7 +1371,7 @@ class Compiler
      * Compile directive
      *
      * @param DirectiveBlock|array                   $directive
-     * @param \ScssPhp\ScssPhp\Formatter\OutputBlock $out
+     * @param OutputBlock $out
      *
      * @return void
      */
@@ -1430,7 +1430,7 @@ class Compiler
     /**
      * Compile at-root
      *
-     * @param \ScssPhp\ScssPhp\Block $block
+     * @param Block $block
      *
      * @return void
      */
@@ -1489,7 +1489,7 @@ class Compiler
     /**
      * Filter at-root scope depending on with/without option
      *
-     * @param \ScssPhp\ScssPhp\Formatter\OutputBlock $scope
+     * @param OutputBlock $scope
      * @param array                                  $with
      * @param array                                  $without
      *
@@ -1564,8 +1564,8 @@ class Compiler
      * found missing selector from a at-root compilation in the previous scope
      * (if at-root is just enclosing a property, the selector is in the parent tree)
      *
-     * @param \ScssPhp\ScssPhp\Formatter\OutputBlock $scope
-     * @param \ScssPhp\ScssPhp\Formatter\OutputBlock $previousScope
+     * @param OutputBlock $scope
+     * @param OutputBlock $previousScope
      *
      * @return OutputBlock
      */
@@ -1587,7 +1587,7 @@ class Compiler
     /**
      * Find a selector by the depth node in the scope
      *
-     * @param \ScssPhp\ScssPhp\Formatter\OutputBlock $scope
+     * @param OutputBlock $scope
      * @param int                                    $depth
      *
      * @return array
@@ -1697,7 +1697,7 @@ class Compiler
     /**
      * Filter WITH rules
      *
-     * @param \ScssPhp\ScssPhp\Block|\ScssPhp\ScssPhp\Formatter\OutputBlock $block
+     * @param Block|OutputBlock $block
      * @param array                                                         $with
      * @param array                                                         $without
      *
@@ -1765,7 +1765,7 @@ class Compiler
     /**
      * Compile keyframe block
      *
-     * @param \ScssPhp\ScssPhp\Block $block
+     * @param Block $block
      * @param string[]               $selectors
      *
      * @return void
@@ -1797,8 +1797,8 @@ class Compiler
     /**
      * Compile nested properties lines
      *
-     * @param \ScssPhp\ScssPhp\Block                 $block
-     * @param \ScssPhp\ScssPhp\Formatter\OutputBlock $out
+     * @param Block $block
+     * @param OutputBlock $out
      *
      * @return void
      */
@@ -1835,7 +1835,7 @@ class Compiler
     /**
      * Compile nested block
      *
-     * @param \ScssPhp\ScssPhp\Block $block
+     * @param Block $block
      * @param string[]               $selectors
      *
      * @return void
@@ -1901,7 +1901,7 @@ class Compiler
      *
      * @see Compiler::compileChild()
      *
-     * @param \ScssPhp\ScssPhp\Block $block
+     * @param Block $block
      *
      * @return void
      */
@@ -2325,7 +2325,7 @@ class Compiler
      * Compile children and return result
      *
      * @param array                                  $stms
-     * @param \ScssPhp\ScssPhp\Formatter\OutputBlock $out
+     * @param OutputBlock $out
      * @param string                                 $traceName
      *
      * @return array|Number|null
@@ -2353,8 +2353,8 @@ class Compiler
      * Compile children and throw exception if unexpected at-return
      *
      * @param array[]                                $stms
-     * @param \ScssPhp\ScssPhp\Formatter\OutputBlock $out
-     * @param \ScssPhp\ScssPhp\Block                 $selfParent
+     * @param OutputBlock $out
+     * @param Block $selfParent
      * @param string                                 $traceName
      *
      * @return void
@@ -2686,7 +2686,7 @@ class Compiler
      * Compile import; returns true if the value was something that could be imported
      *
      * @param array                                  $rawPath
-     * @param \ScssPhp\ScssPhp\Formatter\OutputBlock $out
+     * @param OutputBlock $out
      * @param bool                                   $once
      *
      * @return bool
@@ -2791,7 +2791,7 @@ class Compiler
      * (keeping before comments, @import and @charset coming before in the source code)
      *
      * @param string                                 $line
-     * @param \ScssPhp\ScssPhp\Formatter\OutputBlock $out
+     * @param OutputBlock $out
      * @param array                                  $allowed
      *
      * @return void
@@ -2840,7 +2840,7 @@ class Compiler
      * Append lines to the current output block:
      * directly to the block or through a child if necessary
      *
-     * @param \ScssPhp\ScssPhp\Formatter\OutputBlock $out
+     * @param OutputBlock $out
      * @param string                                 $type
      * @param string                                 $line
      *
@@ -2877,7 +2877,7 @@ class Compiler
      * Compile child; returns a value to halt execution
      *
      * @param array                                  $child
-     * @param \ScssPhp\ScssPhp\Formatter\OutputBlock $out
+     * @param OutputBlock $out
      *
      * @return array|Number|null
      */
@@ -4873,8 +4873,8 @@ EOL;
     /**
      * Find the final set of selectors
      *
-     * @param \ScssPhp\ScssPhp\Compiler\Environment $env
-     * @param \ScssPhp\ScssPhp\Block                $selfParent
+     * @param Environment $env
+     * @param Block $selfParent
      *
      * @return array
      */
@@ -4996,7 +4996,7 @@ EOL;
     /**
      * Multiply media
      *
-     * @param \ScssPhp\ScssPhp\Compiler\Environment $env
+     * @param Environment $env
      * @param array                                 $childQueries
      *
      * @return array
@@ -5089,9 +5089,9 @@ EOL;
     /**
      * Push environment
      *
-     * @param \ScssPhp\ScssPhp\Block $block
+     * @param Block $block
      *
-     * @return \ScssPhp\ScssPhp\Compiler\Environment
+     * @return Environment
      */
     protected function pushEnv(Block $block = null)
     {
@@ -5139,7 +5139,7 @@ EOL;
     /**
      * Get store environment
      *
-     * @return \ScssPhp\ScssPhp\Compiler\Environment
+     * @return Environment
      */
     protected function getStoreEnv()
     {
@@ -5152,7 +5152,7 @@ EOL;
      * @param string                                $name
      * @param mixed                                 $value
      * @param bool                                  $shadow
-     * @param \ScssPhp\ScssPhp\Compiler\Environment $env
+     * @param Environment $env
      * @param mixed                                 $valueUnreduced
      *
      * @return void
@@ -5177,7 +5177,7 @@ EOL;
      *
      * @param string                                $name
      * @param mixed                                 $value
-     * @param \ScssPhp\ScssPhp\Compiler\Environment $env
+     * @param Environment $env
      * @param mixed                                 $valueUnreduced
      *
      * @return void
@@ -5237,7 +5237,7 @@ EOL;
      *
      * @param string                                $name
      * @param mixed                                 $value
-     * @param \ScssPhp\ScssPhp\Compiler\Environment $env
+     * @param Environment $env
      * @param mixed                                 $valueUnreduced
      *
      * @return void
@@ -5258,7 +5258,7 @@ EOL;
      *
      * @param string                                $name
      * @param bool                                  $shouldThrow
-     * @param \ScssPhp\ScssPhp\Compiler\Environment $env
+     * @param Environment $env
      * @param bool                                  $unreduced
      *
      * @return mixed|null
@@ -5324,7 +5324,7 @@ EOL;
      * Has variable?
      *
      * @param string                                $name
-     * @param \ScssPhp\ScssPhp\Compiler\Environment $env
+     * @param Environment $env
      *
      * @return bool
      */
@@ -5706,7 +5706,7 @@ EOL;
      * Import file
      *
      * @param string                                 $path
-     * @param \ScssPhp\ScssPhp\Formatter\OutputBlock $out
+     * @param OutputBlock $out
      *
      * @return void
      */
@@ -6065,7 +6065,7 @@ EOL;
      *
      * @return never
      *
-     * @throws \ScssPhp\ScssPhp\Exception\CompilerException
+     * @throws CompilerException
      *
      * @deprecated use "error" and throw the exception in the caller instead.
      */
@@ -9926,7 +9926,7 @@ TXT;
      *
      * @return array
      *
-     * @throws \ScssPhp\ScssPhp\Exception\CompilerException
+     * @throws CompilerException
      */
     protected function selectorAppend($selectors)
     {
